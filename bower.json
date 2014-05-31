@@ -5,7 +5,8 @@
     "bootstrap-sass-official": "~3.1.0",
     "modernizr": "~2.6.2",
     "jquery": "~1.11.0",
-    "vis": "~1.0.2"
+    "vis": "~1.0.2",
+    "jqueryui": "~1.10.4"
   },
   "devDependencies": {}
 }
