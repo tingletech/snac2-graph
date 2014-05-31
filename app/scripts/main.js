@@ -16,7 +16,7 @@ $(function() {
       edges.push({
         from: value.id,
         to: neighbor,
-        style: 'arrow',
+        style: 'arrow-center',
         length: 250
       });
     });
