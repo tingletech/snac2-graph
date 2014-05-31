@@ -4,6 +4,7 @@ $(function() {
   var nodes = [];
   var edges = [];
 
+  // loop once to set up nodes
   $.each(sample, function( index, value ) {
     nodes.push({
       id: value.id,
@@ -11,6 +12,7 @@ $(function() {
     });
   });
 
+  // loop again for edges
   $.each(sample, function( index, value ) {
     $.each(value.adjacencies, function( index, neighbor ) {
       edges.push({
@@ -23,8 +25,8 @@ $(function() {
   });
 
   // Create a graph
-  // var container = document.getElementById('mygraph');
   var container = $('*[data-snac-graph]')[0];
+  var myname = $(container).data('snacGraph').identity;
   var data = {
     nodes: nodes,
     edges: edges
@@ -44,4 +46,8 @@ $(function() {
     }
   };
   new vis.Graph(container, data, options);
+  $( '#dialog' ).dialog({
+    title: myname,
+    position: { my: 'right top', at: 'right top' }
+  });
 });
