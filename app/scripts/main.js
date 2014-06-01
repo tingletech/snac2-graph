@@ -46,15 +46,18 @@ $(function() {
     }
   };
   var graph = new vis.Graph(container, data, options);
-  console.log(graph.nodes);
-  // add event listener
+
+  // jquery ui dialog
   var dialog = $( '#dialog' );
   dialog.dialog({
     title: myname,
     position: { my: 'right top', at: 'right top' }
   });
+
+  // add event listener
   graph.on('select', function(properties) {
     var label = graph.nodes[properties.nodes[0]].label;
     dialog[0].innerHTML += 'selection: ' + JSON.stringify(label) + '<br>';
   });
+
 });
